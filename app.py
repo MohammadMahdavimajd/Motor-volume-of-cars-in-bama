@@ -71,14 +71,10 @@ app.layout=html.Div([
 if __name__ == '__main__':
     app.run_server(debug=True , port=8080)'''
 import os
-
-# مسیر فولدر فعلی (جایی که فایل app.py هست)
+import webbrowser
 current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# نام فایلی که می‌خوای ذخیره بشه
 output_file = os.path.join(current_dir, "motor_volume_treemap.html")
-
-# ذخیره نمودار به صورت فایل HTML
 fig.write_html(output_file)
+webbrowser.open('file://' + output_file)
+print(f"فایل HTML با موفقیت ذخیره شد و در مرورگر باز شد: {output_file}")
 
-print(f"فایل HTML با موفقیت ذخیره شد در مسیر: {output_file}")
